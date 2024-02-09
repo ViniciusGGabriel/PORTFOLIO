@@ -25,7 +25,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = "vite-ui-theme",
+  storageKey = "portfolio-theme",
   ...props
 }: ThemeProviderProps) {
   // Inicia o theme com o que está no localStorage ou o default
@@ -62,7 +62,6 @@ export function ThemeProvider({
   };
 
   return (
-    // Mostra como deve ser o elemento dentro do pai
     <ThemeProviderContext.Provider {...props} value={value}>
       {children}
     </ThemeProviderContext.Provider>
