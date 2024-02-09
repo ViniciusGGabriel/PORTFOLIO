@@ -1,3 +1,6 @@
+import { Menubar, MenubarMenu } from "@/components/ui/menubar";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import { Menu, GithubIcon, LinkedinIcon } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -6,9 +9,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menubar, MenubarMenu } from "@/components/ui/menubar";
-import { Menu } from "lucide-react";
-import { ModeToggle } from "@/components/ui/mode-toggle";
 
 const MobileNav = () => {
   return (
@@ -22,10 +22,34 @@ const MobileNav = () => {
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
+                <SheetTitle className="mt-5">
+                  Ola! A baixo segue meus links
+                </SheetTitle>
                 <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
+                  <ul className="pt-10 flex flex-col items-center">
+                    <li className="w-44">
+                      <a
+                        href="https://github.com/viniciusggabriel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-between items-center"
+                      >
+                        <span className="text-xl">Github</span>{" "}
+                        <GithubIcon color="purple" />
+                      </a>
+                    </li>
+                    <li className="w-44">
+                      <a
+                        href="https://www.linkedin.com/in/vin%C3%ADcius-gabriel-pereira-leit%C3%A3o/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-between items-center"
+                      >
+                        <span className="text-xl">LinkedIn</span>{" "}
+                        <LinkedinIcon color="blue" />
+                      </a>
+                    </li>
+                  </ul>
                 </SheetDescription>
               </SheetHeader>
             </SheetContent>
