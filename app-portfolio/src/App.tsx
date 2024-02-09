@@ -4,7 +4,7 @@ import { ThemeProvider } from "./components/utils/theme-provider";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
-      <header className="p-2 flex justify-center">
+      <header className="p-2 flex justify-start">
         <Navigator />
       </header>
       <main></main>
