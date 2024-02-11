@@ -3,27 +3,24 @@ import CubeModel from "@/components/models-3d/cube-model";
 const Home = () => {
   return (
     <section className="h-screen flex justify-center items-center" id="home">
-      <article>
+      <article className="md:w-6/12 w-10/12 flex flex-col md:items-start items-center">
         <header>
-          <h1 className="font-black text-xl py-3">
+          <h1 className="font-black text-xl py-3 timeline-scroll-left-1ms">
             Ola! Bem vindo ao meu portfolio
           </h1>
-          <hr className="mb-2" />
+          <hr className="mb-2 timeline-scroll-left-1ms" />
         </header>
-        <figure>
-          <img
-            src="https://bg-so-1.zippyimage.com/2024/02/10/09645f830b8ee469b8eb6c257cb6460a.md.png"
-            alt="profile picture, Vinícius Gabriel, portfolio creator"
-            className="w-6/12 border-2 rounded-md shadow-xl border-neutral-800 dark:border-neutral-500"
-          />
-          <figcaption className="text-sm dark:text-neutral-500">
-            Meu nome é Vinícius
-          </figcaption>
-        </figure>
+        <div className="w-8/12">
+          <p className="text-justify tracking-tight timeline-scroll-left-2ms dark:text-neutral-400">
+            🖖Bem-vindo à minha jornada de desenvolvimento front-end! Explore
+            meu portfólio e descubra como transformo conceitos em interfaces
+            interativas e envolventes.
+          </p>
+        </div>
       </article>
 
       {window.matchMedia("(min-width: 600px)").matches ? (
-        <aside className="w-5/12 h-full flex justify-center items-center rounded-b-md bg-gradient-to-t from-indigo-500 via-purple-500 to-pink-300">
+        <aside className="w-5/12 h-full flex justify-center items-center rounded-b-md bg-gradient-to-t timeline-scroll-top-2ms from-indigo-500 via-purple-500 to-pink-300 ">
           <CubeModel />
         </aside>
       ) : (
