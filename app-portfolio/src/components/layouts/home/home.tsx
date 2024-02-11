@@ -16,7 +16,6 @@ const Home = () => {
             alt="profile picture, Vinícius Gabriel, portfolio creator"
             className="w-6/12 border-2 rounded-md shadow-xl border-neutral-800 dark:border-neutral-500"
           />
-
           <figcaption className="text-sm dark:text-neutral-500">
             Meu nome é Vinícius
           </figcaption>
@@ -24,7 +23,7 @@ const Home = () => {
       </article>
 
       {window.matchMedia("(min-width: 600px)").matches ? (
-        <aside className="w-6/12 h-full flex justify-center items-center bg-cube-blur bg-no-repeat bg-cover">
+        <aside className="w-5/12 h-full flex justify-center items-center rounded-b-md bg-gradient-to-t from-indigo-500 via-purple-500 to-pink-300">
           <CubeModel />
         </aside>
       ) : (

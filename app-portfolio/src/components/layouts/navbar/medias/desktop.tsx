@@ -52,24 +52,24 @@ const DesktopNav = () => {
       </Menubar>
       <Menubar>
         <MenubarMenu>
-          <Button variant={"ghost"}>
-            <a href="#home" className="flex gap-1 items-center">
+          <a href="#home" className="flex gap-1 items-center">
+            <Button variant={"ghost"}>
               <span>Home</span>
               <Home size={20} />
-            </a>
-          </Button>
-          <Button variant={"ghost"}>
-            <a href="#projetos" className="flex gap-1 items-center">
+            </Button>
+          </a>
+          <a href="#projetos" className="flex gap-1 items-center">
+            <Button variant={"ghost"}>
               <span>Projetos</span>
               <ClipboardList size={20} />
-            </a>
-          </Button>
-          <Button variant={"ghost"}>
-            <a href="#contatos" className="flex gap-1 items-center">
+            </Button>
+          </a>
+          <a href="#contatos" className="flex gap-1 items-center">
+            <Button variant={"ghost"}>
               <span>Contato</span>
               <UserRound size={20} />
-            </a>
-          </Button>
+            </Button>
+          </a>
         </MenubarMenu>
       </Menubar>
     </div>
