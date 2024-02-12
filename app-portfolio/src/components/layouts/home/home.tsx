@@ -3,19 +3,21 @@ import CubeModel from "@/components/models-3d/cube-model";
 const Home = () => {
   return (
     <section className="h-screen flex justify-center items-center" id="home">
-      <article className="md:w-6/12 w-10/12 flex flex-col md:items-start items-center">
+      <article className="md:w-6/12 w-11/12 flex flex-col md:items-start items-center">
         <header>
-          <h1 className="font-black text-xl py-3 timeline-scroll-left-1ms">
-            Ola! Bem vindo ao meu portfolio
+          <h1 className="font-black md:text-xl py-3 timeline-scroll-left-1ms">
+            Olá! Bem-vindo ao meu portfólio.
           </h1>
           <hr className="mb-2 timeline-scroll-left-1ms" />
         </header>
         <div className="w-8/12">
-          <p className="text-justify tracking-tight timeline-scroll-left-4ms dark:text-neutral-400">
-            🖖Bem-vindo à minha jornada de desenvolvimento front-end! Explore
-            meu <span className="font-black text-purple-500">portfólio</span> e
-            descubra como transformo conceitos em interfaces interativas e
-            envolventes.
+          <p className="md:text-justify text-center tracking-tight timeline-scroll-left-4ms dark:text-neutral-400">
+            E essa é minha jornada de desenvolvimento{" "}
+            <span className="font-black text-purple-500">front-end!</span>{" "}
+            Explore meu portfólio e descubra como transformo conceitos em
+            interfaces interativas e envolventes, utilizando minhas habilidades
+            em desenvolvimento web. Estou animado para compartilhar meu trabalho
+            com você!
           </p>
         </div>
       </article>
