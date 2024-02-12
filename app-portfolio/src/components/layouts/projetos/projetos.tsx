@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -6,6 +5,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import ProjectCard from "./cards-project/project-card";
+import HabilidadesCard from "./cards-project/habilidades";
 
 type Project = {
   url: string;
@@ -18,17 +19,6 @@ type ProjectsProps = {
   nomeProjeto: string[];
   photoProjeto: string[];
 };
-
-const ProjectCard = ({ project }: { project: Project }) => (
-  <Card className="border-none dark:bg-neutral-800">
-    <CardContent className="flex aspect-square items-center justify-center">
-      <CardHeader className="absolute top-20">
-        {project.name} {/* Todo: card */}
-      </CardHeader>
-      <img src={project.photo} alt={project.name} />
-    </CardContent>
-  </Card>
-);
 
 const Projetos = ({ urlProjeto, nomeProjeto, photoProjeto }: ProjectsProps) => {
   // Verifica se o array tá vazio
@@ -48,9 +38,10 @@ const Projetos = ({ urlProjeto, nomeProjeto, photoProjeto }: ProjectsProps) => {
 
   return (
     <section
-      className="md:h-screen flex justify-center items-center"
+      className="md:h-screen flex flex-col justify-center items-center"
       id="projetos"
     >
+      {/* Projetos carrossel */}
       <Carousel className=" md:w-7/12 w-full m-5">
         <CarouselContent>
           {projects.map((project, index) => (
@@ -59,9 +50,17 @@ const Projetos = ({ urlProjeto, nomeProjeto, photoProjeto }: ProjectsProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {window.matchMedia("(min-width: 600px)").matches ? (
+          <>
+            <CarouselPrevious />
+            <CarouselNext />
+          </>
+        ) : (
+          <></>
+        )}
       </Carousel>
+      {/* Habilidades carrossel */}
+      <HabilidadesCard />
     </section>
   );
 };
