@@ -33,7 +33,7 @@ function App() {
         <Loading />
       ) : (
         <>
-          <header className="fixed w-full z-50">
+          <header className="fixed w-full z-50 p-2">
             <Navbar />
           </header>
           <main>
