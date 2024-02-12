@@ -21,6 +21,13 @@ const DesktopNav = () => {
     <div id="desktop-nav" className="flex justify-between w-full">
       <Menubar>
         <MenubarMenu>
+          <a href="#home" className="size-16 cursor-pointer ">
+            <img
+              src="https://bg-so-1.zippyimage.com/2024/02/11/bb15a9d6f816566c1bd25d7876d54f85.png"
+              alt="logo"
+              className="rounded-full -ml-3 bg-neutral-300 dark:bg-neutral-950"
+            />
+          </a>
           <ModeToggle />
           <MenubarTrigger className="cursor-pointer hover:bg-accent">
             Links
