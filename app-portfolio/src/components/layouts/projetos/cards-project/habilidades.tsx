@@ -37,7 +37,6 @@ const HabilidadesCard = () => {
             <img
               src={`https://skillicons.dev/icons?i=${logo}&theme=dark&perline=9`}
               alt={logo}
-              className="cursor-help"
             />
           </CarouselItem>
         ))}

@@ -25,6 +25,11 @@ function App() {
       "https://bg-so-1.zippyimage.com/2024/02/10/0dbbd602681271e065699015f996e0bc.png",
       "https://bg-so-1.zippyimage.com/2024/02/10/386d0f5ef5568cba7514f34a307e7e99.png",
     ],
+    repoProjeto: [
+      "https://github.com/Viniciusggabriel/Desafio_Modelo3D",
+      "https://github.com/Viniciusggabriel/Desafio_MovieDataBase",
+      "https://github.com/Viniciusggabriel/Desafio_JogoMarioTS",
+    ],
   };
 
   return (
@@ -42,6 +47,7 @@ function App() {
               nomeProjeto={projetosProps.nomes}
               urlProjeto={projetosProps.url}
               photoProjeto={projetosProps.photoProjeto}
+              repoProjeto={projetosProps.repoProjeto}
             />
           </main>
         </>

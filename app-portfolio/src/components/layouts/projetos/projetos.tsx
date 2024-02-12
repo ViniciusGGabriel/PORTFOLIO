@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -12,29 +13,30 @@ type Project = {
   url: string;
   name: string;
   photo: string;
+  repo: string;
 };
 
 type ProjectsProps = {
   urlProjeto: string[];
   nomeProjeto: string[];
   photoProjeto: string[];
+  repoProjeto: string[];
 };
 
-const Projetos = ({ urlProjeto, nomeProjeto, photoProjeto }: ProjectsProps) => {
-  // Verifica se o array tá vazio
-  if (
-    urlProjeto.length !== nomeProjeto.length ||
-    urlProjeto.length !== photoProjeto.length
-  ) {
-    console.error("Array lengths do not match");
-    return null;
-  }
-
+const Projetos: React.FC<ProjectsProps> = ({
+  urlProjeto,
+  nomeProjeto,
+  photoProjeto,
+  repoProjeto,
+}) => {
   const projects: Project[] = urlProjeto.map((url, index) => ({
     url: url,
     name: nomeProjeto[index],
     photo: photoProjeto[index],
+    repo: repoProjeto[index], // Corrigido para acessar o repo correto com o índice
   }));
+
+  const isWindowDefined = typeof window !== "undefined";
 
   return (
     <section
@@ -50,13 +52,11 @@ const Projetos = ({ urlProjeto, nomeProjeto, photoProjeto }: ProjectsProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        {window.matchMedia("(min-width: 600px)").matches ? (
+        {isWindowDefined && window.matchMedia("(min-width: 600px)").matches && (
           <>
             <CarouselPrevious />
             <CarouselNext />
           </>
-        ) : (
-          <></>
         )}
       </Carousel>
       {/* Habilidades carrossel */}
