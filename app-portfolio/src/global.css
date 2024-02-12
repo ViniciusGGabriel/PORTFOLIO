@@ -70,6 +70,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -87,6 +88,7 @@ html {
   from {
     translate: 0%;
   }
+
   to {
     translate: -100%;
   }
@@ -96,10 +98,13 @@ html {
   from {
     translate: 0%;
   }
+
   to {
     transform: translateY(-100%);
   }
 }
+
+/* Animation for left */
 
 .timeline-scroll-left-1ms {
   animation: appear-left 0.1ms alternate;
@@ -120,6 +125,8 @@ html {
   animation: appear-left 0.4ms alternate;
   animation-timeline: scroll();
 }
+
+/* Animation for top */
 
 .timeline-scroll-top-1ms {
   animation: appear-top 0.1ms alternate;
