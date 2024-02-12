@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Rocket, Github } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 type Project = {
   url: string;
@@ -11,9 +18,19 @@ type Project = {
 
 const ProjectCard = ({ project }: { project: Project }) => (
   <Card className="border-none flex flex-col items-center dark:bg-neutral-800">
-    {project.name}
+    <h1 className="pt-3 text-2xl font-black">{project.name}</h1>
     <CardContent className="flex aspect-video items-center justify-center">
-      <img src={project.photo} alt={project.name} className="rounded-md" />
+      <Dialog>
+        <DialogTrigger>
+          <img src={project.photo} alt={project.name} className="rounded-md" />
+        </DialogTrigger>
+        <DialogContent className="max-w-[1100px] md:min-h-[700px]">
+          <DialogHeader>
+            <DialogTitle>{project.name}</DialogTitle>
+          </DialogHeader>
+          <iframe src={project.url} className="w-full h-full" />
+        </DialogContent>
+      </Dialog>
     </CardContent>
     <CardFooter className="flex flex-col md:flex-row md:gap-16">
       <a href={project.repo} target="_blank">

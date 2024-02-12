@@ -13,7 +13,7 @@ const HabilidadesCard = () => {
           delay: 2000,
         }),
       ]}
-      className="md:flex md: justify-center w-10/12 my-4"
+      className="md:flex md: justify-center w-10/12 my-10"
     >
       <CarouselContent>
         {[
