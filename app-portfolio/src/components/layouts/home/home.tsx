@@ -11,10 +11,11 @@ const Home = () => {
           <hr className="mb-2 timeline-scroll-left-1ms" />
         </header>
         <div className="w-8/12">
-          <p className="text-justify tracking-tight timeline-scroll-left-2ms dark:text-neutral-400">
+          <p className="text-justify tracking-tight timeline-scroll-left-4ms dark:text-neutral-400">
             🖖Bem-vindo à minha jornada de desenvolvimento front-end! Explore
-            meu portfólio e descubra como transformo conceitos em interfaces
-            interativas e envolventes.
+            meu <span className="font-black text-purple-500">portfólio</span> e
+            descubra como transformo conceitos em interfaces interativas e
+            envolventes.
           </p>
         </div>
       </article>
