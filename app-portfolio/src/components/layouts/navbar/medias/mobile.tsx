@@ -9,6 +9,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import FormEmail from "@/components/ui/form-email";
+import { Button } from "@/components/ui/button";
 
 const MobileNav = () => {
   return (
@@ -33,28 +35,43 @@ const MobileNav = () => {
                   Olá! segue a baixo meus links
                 </SheetTitle>
                 <SheetDescription>
-                  <ul className="pt-10 flex flex-col items-center">
-                    <li className="w-44">
+                  <ul className="pt-10 gap-2 flex flex-col items-center">
+                    <li className="w-full">
                       <a
                         href="https://github.com/viniciusggabriel"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex justify-between items-center"
                       >
-                        <span className="text-xl">Github</span>{" "}
-                        <GithubIcon color="purple" />
+                        <Button
+                          variant={"outline"}
+                          size={"sm"}
+                          className="w-full flex justify-between"
+                        >
+                          <span className="text-xl">Github</span>
+                          <GithubIcon color="purple" />
+                        </Button>
                       </a>
                     </li>
-                    <li className="w-44">
+                    <li className="w-full">
                       <a
                         href="https://www.linkedin.com/in/vin%C3%ADcius-gabriel-pereira-leit%C3%A3o/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex justify-between items-center"
                       >
-                        <span className="text-xl">LinkedIn</span>{" "}
-                        <LinkedinIcon color="blue" />
+                        <Button
+                          variant={"outline"}
+                          size={"sm"}
+                          className="w-full flex justify-between"
+                        >
+                          <span className="text-xl">LinkedIn</span>
+                          <LinkedinIcon color="blue" />
+                        </Button>
                       </a>
+                    </li>
+                    <li className="w-full">
+                      <FormEmail />
                     </li>
                   </ul>
                 </SheetDescription>

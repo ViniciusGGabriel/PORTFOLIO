@@ -6,6 +6,7 @@ import {
   Home,
   ClipboardList,
   UserRound,
+  Mail,
 } from "lucide-react";
 import {
   Menubar,
@@ -15,6 +16,8 @@ import {
   MenubarSeparator,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import FormEmail from "@/components/ui/form-email";
 
 const DesktopNav = () => {
   return (
@@ -71,12 +74,22 @@ const DesktopNav = () => {
               <ClipboardList size={20} />
             </Button>
           </a>
-          <a href="#contatos" className="flex gap-1 items-center">
+          <a href="#curriculum" className="flex gap-1 items-center">
             <Button variant={"ghost"}>
-              <span>Contato</span>
+              <span>Curriculum</span>
               <UserRound size={20} />
             </Button>
           </a>
+          <Dialog>
+            <DialogTrigger>
+              <Button variant={"ghost"} className="flex gap-1 items-center">
+                <span>Email</span> <Mail />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="flex justify-center">
+              <FormEmail />
+            </DialogContent>
+          </Dialog>
         </MenubarMenu>
       </Menubar>
     </div>
