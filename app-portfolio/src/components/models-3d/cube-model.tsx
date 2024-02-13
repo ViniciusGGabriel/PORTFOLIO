@@ -34,14 +34,18 @@ function CubeModel() {
     camera.position.x = 1.2;
     camera.position.y = 1.2;
 
-    const animate = () => {
-      requestAnimationFrame(animate);
-      // Animation + control
-      line.rotation.x += 0.01;
-      line.rotation.y += 0.01;
-      controls.update();
+    const animate = async () => {
+      try {
+        requestAnimationFrame(animate);
+        // Animation + control
+        line.rotation.x += 0.01;
+        line.rotation.y += 0.01;
+        controls.update();
 
-      renderer.render(scene, camera);
+        renderer.render(scene, camera);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     animate();
