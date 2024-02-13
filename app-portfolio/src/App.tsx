@@ -5,7 +5,7 @@ import Navbar from "./components/layouts/navbar/navbar";
 import { ThemeProvider } from "./components/utils/theme-provider";
 // Estados
 import { useEffect, useState } from "react";
-import Contato from "./components/layouts/contato/contato";
+import Curriculum from "./components/layouts/curriculum/curriculum";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -50,7 +50,7 @@ function App() {
               photoProjeto={projetosProps.photoProjeto}
               repoProjeto={projetosProps.repoProjeto}
             />
-            <Contato />
+            <Curriculum />
           </main>
         </>
       )}
