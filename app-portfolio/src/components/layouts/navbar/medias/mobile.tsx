@@ -30,7 +30,7 @@ const MobileNav = () => {
             <SheetContent>
               <SheetHeader>
                 <SheetTitle className="mt-5">
-                  Ola! A baixo segue meus links
+                  Olá! segue a baixo meus links
                 </SheetTitle>
                 <SheetDescription>
                   <ul className="pt-10 flex flex-col items-center">
