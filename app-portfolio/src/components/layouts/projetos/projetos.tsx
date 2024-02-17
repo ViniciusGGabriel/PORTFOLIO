@@ -36,7 +36,7 @@ const Projetos: React.FC<ProjectsProps> = ({
     repo: repoProjeto[index], // Corrigido para acessar o repo correto com o índice
   }));
 
-  const isWindowDefined = typeof window !== "undefined";
+  // const isWindowDefined = typeof window !== "undefined";
 
   return (
     <section
@@ -44,20 +44,24 @@ const Projetos: React.FC<ProjectsProps> = ({
       id="projetos"
     >
       {/* Projetos carrossel */}
-      <Carousel className=" md:w-7/12 w-full m-5">
-        <CarouselContent>
+      <Carousel
+        className="md:w-7/12 w-full m-5"
+        orientation={
+          window.matchMedia("(max-width: 600px)").matches
+            ? "vertical"
+            : "horizontal"
+        }
+      >
+        <CarouselContent className="h-[350px]">
           {projects.map((project, index) => (
-            <CarouselItem className="basis-1/2" key={index}>
+            <CarouselItem className="md:basis-1/2" key={index}>
               <ProjectCard project={project} />
             </CarouselItem>
           ))}
         </CarouselContent>
-        {isWindowDefined && window.matchMedia("(min-width: 600px)").matches && (
-          <>
-            <CarouselPrevious />
-            <CarouselNext />
-          </>
-        )}
+
+        <CarouselPrevious />
+        <CarouselNext className="mb-6" />
       </Carousel>
       {/* Habilidades carrossel */}
       <HabilidadesCard />

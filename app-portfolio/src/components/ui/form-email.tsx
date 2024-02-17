@@ -3,7 +3,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "./textarea";
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import EnviarEmail from "../utils/enviar-email";
+import { Button } from "./button";
 
 type eventProps = {
   preventDefault(): void;
@@ -13,14 +15,21 @@ const FormEmail = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
+  const [successful, setSuccessful] = useState(false);
 
   const handleEnviarEmail = async (event: eventProps) => {
     try {
       event.preventDefault();
-      EnviarEmail({ name: nome, email: email, mensagem: mensagem }, event);
-      setNome("");
-      setEmail("");
-      setMensagem("");
+      const enviadoComSucesso = await EnviarEmail(
+        { name: nome, email: email, mensagem: mensagem },
+        event
+      );
+
+      if (enviadoComSucesso) {
+        setSuccessful(true);
+      } else {
+        setSuccessful(false);
+      }
     } catch (error) {
       console.error("Ouve um erro ao enviar a mensagem");
     }
@@ -81,6 +90,30 @@ const FormEmail = () => {
             </button>
           </div>
         </form>
+        {successful ? (
+          <Alert className="fixed bg-transparent backdrop-blur-xl w-screen h-screen left-[50%] top-[50%] z-50 translate-x-[-50%] translate-y-[-50%]">
+            <div className="fixed left-[50%] top-[50%] z-50 translate-x-[-50%] translate-y-[-50%]">
+              <AlertTitle>Email enviado ✅</AlertTitle>
+              <AlertDescription className="flex items-center gap-3">
+                <span>
+                  Assim que possível responderei o seu email, desde já agradeço
+                  😊.
+                </span>
+                <Button
+                  variant={"outline"}
+                  size={"sm"}
+                  onClick={() => {
+                    setSuccessful(false);
+                  }}
+                >
+                  Fechar
+                </Button>
+              </AlertDescription>
+            </div>
+          </Alert>
+        ) : (
+          <></>
+        )}
       </CardContent>
     </Card>
   );
