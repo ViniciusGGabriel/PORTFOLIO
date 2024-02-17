@@ -19,7 +19,7 @@ export default async function EnviarEmail(
   try {
     if (name === "" || email === "" || mensagem === "") {
       alert("Preencha todos os campos necessários");
-      return;
+      return false;
     }
 
     const templatesParams = {
@@ -36,10 +36,12 @@ export default async function EnviarEmail(
     );
 
     console.log("Email enviado com sucesso");
+    return true;
   } catch (error) {
     console.error("Erro ao enviar email", error);
     alert(
       "Houve um erro ao enviar o email. Por favor, tente novamente mais tarde."
     );
+    return false;
   }
 }
