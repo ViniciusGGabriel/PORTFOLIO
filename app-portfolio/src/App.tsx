@@ -50,7 +50,12 @@ function App() {
               photoProjeto={projetosProps.photoProjeto}
               repoProjeto={projetosProps.repoProjeto}
             />
-            <Curriculum />
+            
+            {window.matchMedia("(max-width: 600px)").matches ? (
+              <Curriculum />
+            ) : (
+              <></>
+            )}
           </main>
         </>
       )}
