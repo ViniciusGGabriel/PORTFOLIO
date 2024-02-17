@@ -1,17 +1,31 @@
 import CubeModel from "@/components/models-3d/cube-model";
 
 const Home = () => {
+  const media = window.matchMedia("(max-width: 600px)").matches;
+
   return (
     <section className="h-screen flex justify-center items-center" id="home">
       <article className="md:w-6/12 w-11/12 flex flex-col md:items-start items-center">
         <header>
-          <h1 className="font-black md:text-xl py-3 timeline-scroll-left-1ms">
+          <h1
+            className={`font-black md:text-xl py-3 ${
+              media ? `timeline-scroll-top-1ms` : `timeline-scroll-left-1ms`
+            }`}
+          >
             Olá! Bem-vindo ao meu portfólio.
           </h1>
-          <hr className="mb-2 timeline-scroll-left-1ms" />
+          <hr
+            className={`mb-2 ${
+              media ? `timeline-scroll-top-1ms` : `timeline-scroll-left-4ms`
+            }`}
+          />
         </header>
         <div className="w-8/12">
-          <p className="md:text-justify text-center tracking-tight timeline-scroll-left-4ms dark:text-neutral-400">
+          <p
+            className={`md:text-justify text-center tracking-tight ${
+              media ? `timeline-scroll-top-4ms` : `timeline-scroll-left-4ms`
+            } dark:text-neutral-400`}
+          >
             E essa é minha jornada de desenvolvimento{" "}
             <span className="font-black text-purple-500">front-end!</span>{" "}
             Explore meu portfólio e descubra como transformo conceitos em
